@@ -1,8 +1,11 @@
 #pragma once
 
 #include "ofMain.h"
+#include "GuiApp.h"
+#include "BaseArch.h"
 
 #include "ofxGui.h"
+
 
 #include "Calligraphy.h"
 
@@ -28,9 +31,14 @@ public:
     void dragEvent(ofDragInfo dragInfo);
     void gotMessage(ofMessage msg);
     
+    
+    shared_ptr<GuiApp> gui;
+    BaseArch baseArch;
+    
+    
     ofSoundPlayer glassscherben;
     ofSoundPlayer spacefunk;
-    
+        
     float * fftSmoothed;
     
     int nBandsToGet;
@@ -42,11 +50,12 @@ public:
     vector<float> captureFFTSmoothed;
     vector<int> captureFFTIndex;
     
-    ofxPanel gui;
+//    ofxPanel gui;
     
-    ofxIntSlider captureTimer;
-    ofxButton musicChange;
+//    ofxIntSlider captureTimer;
+//    ofxButton musicChange;
     int musicChangeIndex;
+    int captureTimer;
 
 
     void musicChangePressed();

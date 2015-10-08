@@ -10,10 +10,13 @@
 		13DBDF3E91D15454CDCE3F81 /* ofxLabel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 807DA2130DDB7679341206D8 /* ofxLabel.cpp */; };
 		5DB0FD9C47C8AED393543077 /* ofxToggle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CB61A3F6E62286D73F419FA /* ofxToggle.cpp */; };
 		5DE87C0399C3D16E809524E4 /* ofxPanel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3FE97224BEE70C8CAC2006DA /* ofxPanel.cpp */; };
+		6D46844280E4B74216C8464F /* Calligraphy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1791D73DFCE685A0B703528F /* Calligraphy.cpp */; };
 		72F586B1E35F0C5BCDB2003D /* ofxSlider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B0340B37FFF274102BE3CCC /* ofxSlider.cpp */; };
+		75848DD2538F3F5D9ABC6517 /* ofxCsv.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E3894C818E1A243545D4B9FC /* ofxCsv.cpp */; };
 		883A19B4FB8259967B85B9FF /* ofxSliderGroup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D8CE42EAFA1B5022BB6FFC4B /* ofxSliderGroup.cpp */; };
 		90A67B674EF9B104D82A5143 /* ofxBaseGui.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 978FC5AD324430DE5A0A5D92 /* ofxBaseGui.cpp */; };
-		A83DEE111B4E80C7003E2596 /* Calligraphy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A83DEE0F1B4E80C7003E2596 /* Calligraphy.cpp */; };
+		A8EB877E1BC67869004650B8 /* BaseArch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8EB877A1BC67869004650B8 /* BaseArch.cpp */; settings = {ASSET_TAGS = (); }; };
+		A8EB877F1BC67869004650B8 /* GuiApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8EB877C1BC67869004650B8 /* GuiApp.cpp */; settings = {ASSET_TAGS = (); }; };
 		BDED0ECDB2BE0FD939C38AEB /* ofxButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7C3ED944D179B4C151BDD311 /* ofxButton.cpp */; };
 		E4328149138ABC9F0047C5CB /* openFrameworksDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4328148138ABC890047C5CB /* openFrameworksDebug.a */; };
 		E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4B69E1D0A3A1BDC003C02F2 /* main.cpp */; };
@@ -51,8 +54,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1791D73DFCE685A0B703528F /* Calligraphy.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = Calligraphy.cpp; path = src/Calligraphy.cpp; sourceTree = SOURCE_ROOT; };
 		2C36B84F1D7547C03CD01C28 /* ofxButton.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxButton.h; path = ../../../../openFrameworks/addons/ofxGui/src/ofxButton.h; sourceTree = SOURCE_ROOT; };
 		2CB61A3F6E62286D73F419FA /* ofxToggle.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxToggle.cpp; path = ../../../../openFrameworks/addons/ofxGui/src/ofxToggle.cpp; sourceTree = SOURCE_ROOT; };
+		314308689700F38F9C218007 /* Calligraphy.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = Calligraphy.h; path = src/Calligraphy.h; sourceTree = SOURCE_ROOT; };
+		3963E2B33C025955ED497D1C /* ofxCsv.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxCsv.h; path = ../../../../openFrameworks/addons/ofxCsv/src/ofxCsv.h; sourceTree = SOURCE_ROOT; };
 		3FE97224BEE70C8CAC2006DA /* ofxPanel.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxPanel.cpp; path = ../../../../openFrameworks/addons/ofxGui/src/ofxPanel.cpp; sourceTree = SOURCE_ROOT; };
 		6B0340B37FFF274102BE3CCC /* ofxSlider.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxSlider.cpp; path = ../../../../openFrameworks/addons/ofxGui/src/ofxSlider.cpp; sourceTree = SOURCE_ROOT; };
 		6C98999A0E2181C67387FF65 /* ofxGuiGroup.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxGuiGroup.cpp; path = ../../../../openFrameworks/addons/ofxGui/src/ofxGuiGroup.cpp; sourceTree = SOURCE_ROOT; };
@@ -61,13 +67,16 @@
 		807DA2130DDB7679341206D8 /* ofxLabel.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxLabel.cpp; path = ../../../../openFrameworks/addons/ofxGui/src/ofxLabel.cpp; sourceTree = SOURCE_ROOT; };
 		97332472E61EC4DA03FB7532 /* ofxSlider.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxSlider.h; path = ../../../../openFrameworks/addons/ofxGui/src/ofxSlider.h; sourceTree = SOURCE_ROOT; };
 		978FC5AD324430DE5A0A5D92 /* ofxBaseGui.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxBaseGui.cpp; path = ../../../../openFrameworks/addons/ofxGui/src/ofxBaseGui.cpp; sourceTree = SOURCE_ROOT; };
-		A83DEE0F1B4E80C7003E2596 /* Calligraphy.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Calligraphy.cpp; sourceTree = "<group>"; };
-		A83DEE101B4E80C7003E2596 /* Calligraphy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Calligraphy.h; sourceTree = "<group>"; };
+		A8EB877A1BC67869004650B8 /* BaseArch.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = BaseArch.cpp; path = ../../bpii_Calibration/src/BaseArch.cpp; sourceTree = "<group>"; };
+		A8EB877B1BC67869004650B8 /* BaseArch.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = BaseArch.h; path = ../../bpii_Calibration/src/BaseArch.h; sourceTree = "<group>"; };
+		A8EB877C1BC67869004650B8 /* GuiApp.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = GuiApp.cpp; path = ../../bpii_Calibration/src/GuiApp.cpp; sourceTree = "<group>"; };
+		A8EB877D1BC67869004650B8 /* GuiApp.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = GuiApp.h; path = ../../bpii_Calibration/src/GuiApp.h; sourceTree = "<group>"; };
 		C0B01119435D4672DF3FF84B /* ofxGui.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxGui.h; path = ../../../../openFrameworks/addons/ofxGui/src/ofxGui.h; sourceTree = SOURCE_ROOT; };
 		C7C85D012956D84B9210CE5A /* ofxPanel.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxPanel.h; path = ../../../../openFrameworks/addons/ofxGui/src/ofxPanel.h; sourceTree = SOURCE_ROOT; };
 		D8CE42EAFA1B5022BB6FFC4B /* ofxSliderGroup.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxSliderGroup.cpp; path = ../../../../openFrameworks/addons/ofxGui/src/ofxSliderGroup.cpp; sourceTree = SOURCE_ROOT; };
 		E02A8EBF0C4EDC22A5BE4011 /* ofxSliderGroup.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxSliderGroup.h; path = ../../../../openFrameworks/addons/ofxGui/src/ofxSliderGroup.h; sourceTree = SOURCE_ROOT; };
 		E35C9532577449CCB61F814A /* ofxBaseGui.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxBaseGui.h; path = ../../../../openFrameworks/addons/ofxGui/src/ofxBaseGui.h; sourceTree = SOURCE_ROOT; };
+		E3894C818E1A243545D4B9FC /* ofxCsv.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxCsv.cpp; path = ../../../../openFrameworks/addons/ofxCsv/src/ofxCsv.cpp; sourceTree = SOURCE_ROOT; };
 		E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = openFrameworksLib.xcodeproj; path = ../../../../openFrameworks/libs/openFrameworksCompiled/project/osx/openFrameworksLib.xcodeproj; sourceTree = SOURCE_ROOT; };
 		E4B69B5B0A3A1756003C02F2 /* MusicFFT_scoreDebug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicFFT_scoreDebug.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4B69E1D0A3A1BDC003C02F2 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = src/main.cpp; sourceTree = SOURCE_ROOT; };
@@ -92,12 +101,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		412E4BCA71876A3B006CE76E /* src */ = {
+			isa = PBXGroup;
+			children = (
+				E3894C818E1A243545D4B9FC /* ofxCsv.cpp */,
+				3963E2B33C025955ED497D1C /* ofxCsv.h */,
+			);
+			name = src;
+			sourceTree = "<group>";
+		};
 		480A780D8D0308AE4A368801 /* ofxGui */ = {
 			isa = PBXGroup;
 			children = (
 				A763ED608B35AE3310251DEE /* src */,
 			);
 			name = ofxGui;
+			sourceTree = "<group>";
+		};
+		5CFAC65997CFC4C36CD009B7 /* ofxCsv */ = {
+			isa = PBXGroup;
+			children = (
+				412E4BCA71876A3B006CE76E /* src */,
+			);
+			name = ofxCsv;
+			sourceTree = "<group>";
+		};
+		6948EE371B920CB800B5AC1A /* local_addons */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = local_addons;
 			sourceTree = "<group>";
 		};
 		A763ED608B35AE3310251DEE /* src */ = {
@@ -127,6 +160,7 @@
 		BB4B014C10F69532006C3DED /* addons */ = {
 			isa = PBXGroup;
 			children = (
+				5CFAC65997CFC4C36CD009B7 /* ofxCsv */,
 				480A780D8D0308AE4A368801 /* ofxGui */,
 			);
 			name = addons;
@@ -148,6 +182,7 @@
 				E4B69E1C0A3A1BDC003C02F2 /* src */,
 				E4EEC9E9138DF44700A80321 /* openFrameworks */,
 				BB4B014C10F69532006C3DED /* addons */,
+				6948EE371B920CB800B5AC1A /* local_addons */,
 				E4B69B5B0A3A1756003C02F2 /* MusicFFT_scoreDebug.app */,
 			);
 			sourceTree = "<group>";
@@ -158,8 +193,12 @@
 				E4B69E1D0A3A1BDC003C02F2 /* main.cpp */,
 				E4B69E1E0A3A1BDC003C02F2 /* ofApp.cpp */,
 				E4B69E1F0A3A1BDC003C02F2 /* ofApp.h */,
-				A83DEE0F1B4E80C7003E2596 /* Calligraphy.cpp */,
-				A83DEE101B4E80C7003E2596 /* Calligraphy.h */,
+				A8EB877A1BC67869004650B8 /* BaseArch.cpp */,
+				A8EB877B1BC67869004650B8 /* BaseArch.h */,
+				A8EB877C1BC67869004650B8 /* GuiApp.cpp */,
+				A8EB877D1BC67869004650B8 /* GuiApp.h */,
+				1791D73DFCE685A0B703528F /* Calligraphy.cpp */,
+				314308689700F38F9C218007 /* Calligraphy.h */,
 			);
 			path = src;
 			sourceTree = SOURCE_ROOT;
@@ -262,13 +301,16 @@
 			files = (
 				E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */,
 				E4B69E210A3A1BDC003C02F2 /* ofApp.cpp in Sources */,
+				6D46844280E4B74216C8464F /* Calligraphy.cpp in Sources */,
+				75848DD2538F3F5D9ABC6517 /* ofxCsv.cpp in Sources */,
 				90A67B674EF9B104D82A5143 /* ofxBaseGui.cpp in Sources */,
-				A83DEE111B4E80C7003E2596 /* Calligraphy.cpp in Sources */,
 				BDED0ECDB2BE0FD939C38AEB /* ofxButton.cpp in Sources */,
 				EB0E84BEAD177E6CB08DB4EF /* ofxGuiGroup.cpp in Sources */,
 				13DBDF3E91D15454CDCE3F81 /* ofxLabel.cpp in Sources */,
 				5DE87C0399C3D16E809524E4 /* ofxPanel.cpp in Sources */,
 				72F586B1E35F0C5BCDB2003D /* ofxSlider.cpp in Sources */,
+				A8EB877E1BC67869004650B8 /* BaseArch.cpp in Sources */,
+				A8EB877F1BC67869004650B8 /* GuiApp.cpp in Sources */,
 				883A19B4FB8259967B85B9FF /* ofxSliderGroup.cpp in Sources */,
 				5DB0FD9C47C8AED393543077 /* ofxToggle.cpp in Sources */,
 			);
@@ -306,10 +348,8 @@
 				GCC_WARN_UNUSED_VARIABLE = NO;
 				HEADER_SEARCH_PATHS = (
 					"$(OF_CORE_HEADERS)",
-					../../../../openFrameworks/addons/addons/libs,
-					../../../../openFrameworks/addons/addons/src,
 					src,
-					../../../../openFrameworks/addons/ofxGui/libs,
+					../../../../openFrameworks/addons/ofxCsv/src,
 					../../../../openFrameworks/addons/ofxGui/src,
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
@@ -344,10 +384,8 @@
 				GCC_WARN_UNUSED_VARIABLE = NO;
 				HEADER_SEARCH_PATHS = (
 					"$(OF_CORE_HEADERS)",
-					../../../../openFrameworks/addons/addons/libs,
-					../../../../openFrameworks/addons/addons/src,
 					src,
-					../../../../openFrameworks/addons/ofxGui/libs,
+					../../../../openFrameworks/addons/ofxCsv/src,
 					../../../../openFrameworks/addons/ofxGui/src,
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
@@ -375,10 +413,8 @@
 				GCC_MODEL_TUNING = NONE;
 				HEADER_SEARCH_PATHS = (
 					"$(OF_CORE_HEADERS)",
-					../../../../openFrameworks/addons/addons/libs,
-					../../../../openFrameworks/addons/addons/src,
 					src,
-					../../../../openFrameworks/addons/ofxGui/libs,
+					../../../../openFrameworks/addons/ofxCsv/src,
 					../../../../openFrameworks/addons/ofxGui/src,
 				);
 				ICON = "$(ICON_NAME_DEBUG)";
@@ -406,10 +442,8 @@
 				GCC_MODEL_TUNING = NONE;
 				HEADER_SEARCH_PATHS = (
 					"$(OF_CORE_HEADERS)",
-					../../../../openFrameworks/addons/addons/libs,
-					../../../../openFrameworks/addons/addons/src,
 					src,
-					../../../../openFrameworks/addons/ofxGui/libs,
+					../../../../openFrameworks/addons/ofxCsv/src,
 					../../../../openFrameworks/addons/ofxGui/src,
 				);
 				ICON = "$(ICON_NAME_RELEASE)";

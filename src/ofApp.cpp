@@ -4,7 +4,7 @@
 //--------------------------------------------------------------
 void ofApp::setup(){	 
 
-    ofSetDataPathRoot("../Resources/data/");
+//    ofSetDataPathRoot("../Resources/data/");
 
     
     glassscherben.load("musics/glassscherben.mp3");
@@ -31,12 +31,12 @@ void ofApp::setup(){
     }
     
     
-    gui.setup();
-    gui.add(captureTimer.setup("Capture Frame", 50, 1, 120));
-    gui.add(musicChange.setup("Music Change", false));
+//    gui.setup();
+//    gui.add(captureTimer.setup("Capture Frame", 50, 1, 120));
+//    gui.add(musicChange.setup("Music Change", false));
 
     
-    musicChange.addListener(this, &ofApp::musicChangePressed);
+//    musicChange.addListener(this, &ofApp::musicChangePressed);
     musicChangeIndex = 1;
     
     spacefunk.play();
@@ -55,17 +55,18 @@ void ofApp::musicChangePressed(){
     musicChangeIndex++;
     musicChangeIndex = musicChangeIndex % 2;
 
+    glassscherben.play();
+    spacefunk.stop();
+    captureTimer = 9;
+
     switch (musicChangeIndex) {
         case 0:
-            glassscherben.play();
-            spacefunk.stop();
-            captureTimer = 9;
             break;
 
         case 1:
             glassscherben.stop();
             spacefunk.play();
-            captureTimer = 15;
+//            captureTimer = 15;
             break;
 
         default:
@@ -80,6 +81,11 @@ void ofApp::musicChangePressed(){
 void ofApp::update(){
 	
 	ofSoundUpdate();
+    
+    glassscherben.play();
+    spacefunk.stop();
+    captureTimer = 9;
+
 	
 	float * val = ofSoundGetSpectrum(nBandsToGet);		// request 128 values for fft
 	for (int i = 0;i < nBandsToGet; i++){
@@ -152,7 +158,7 @@ void ofApp::draw(){
     
     calligraphy.drawCali(800, 300);
     
-    gui.draw();
+//    gui.draw();
     
 }
 
