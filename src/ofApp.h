@@ -5,7 +5,7 @@
 #include "BaseArch.h"
 
 #include "ofxGui.h"
-
+#include "ofxProcessFFT.h"
 
 #include "Calligraphy.h"
 
@@ -36,15 +36,12 @@ public:
     BaseArch baseArch;
     
     
-    ofSoundPlayer glassscherben;
-    ofSoundPlayer spacefunk;
-        
     float * fftSmoothed;
     
     int nBandsToGet;
     float prevx, prevy;
     
-    void normalFFT(float _yPos = 10);
+    void normalFFT();
     void lineCircleFFT(float _yPos = 200);
     void lineCircleCaptureFFT(float _yPos = 450);
     vector<float> captureFFTSmoothed;
@@ -54,12 +51,8 @@ public:
     
 //    ofxIntSlider captureTimer;
 //    ofxButton musicChange;
-    int musicChangeIndex;
     int captureTimer;
 
-
-    void musicChangePressed();
-    
     float xPosition;
     
     
@@ -71,5 +64,11 @@ public:
     int calliIndex;
     vector<ofVec3f> calliPos;
 
+    ProcessFFT fft;
+    
+    
+    float mainOffSetXPos, mainOffSetYPos;
+
+    
 };
 

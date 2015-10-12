@@ -4,17 +4,15 @@
 //--------------------------------------------------------------
 void ofApp::setup(){	 
 
-//    ofSetDataPathRoot("../Resources/data/");
+    
+    ofSetFrameRate(60);
+    ofBackground(0);
+    
+    mainOffSetXPos = (ofGetWidth() - (baseArch.fassadeCorner[0].x + baseArch.fassadeCorner[1].x)) * 0.5;
+    mainOffSetYPos = (ofGetHeight() - (baseArch.fassadeCorner[0].y + baseArch.fassadeCorner[3].y)) * 0.5;
+    baseArch.mainOffSetXPos = mainOffSetXPos;
+    baseArch.mainOffSetYPos = mainOffSetYPos;
 
-    
-    glassscherben.load("musics/glassscherben.mp3");
-    spacefunk.load("musics/spacefunk.mp3");
-    glassscherben.setLoop(true);
-    spacefunk.setLoop(true);
-    
-    ofBackground( 10 );
-    ofSetFrameRate( 60 );
-    ofSetBackgroundAuto( false );
     
 	
 	fftSmoothed = new float[8192];
@@ -22,143 +20,119 @@ void ofApp::setup(){
 		fftSmoothed[i] = 0;
 	}
 	
-	nBandsToGet = 32;
+	nBandsToGet = 32 * 2;
     
     for(int i=0; i<10; i++) {
-        int _index = round(ofRandom(127));
+        int _index = round(ofRandom(360));
         captureFFTIndex.push_back( _index );
         captureFFTSmoothed.push_back( fftSmoothed[_index] );
     }
     
     
-//    gui.setup();
-//    gui.add(captureTimer.setup("Capture Frame", 50, 1, 120));
-//    gui.add(musicChange.setup("Music Change", false));
-
-    
-//    musicChange.addListener(this, &ofApp::musicChangePressed);
-    musicChangeIndex = 1;
-    
-    spacefunk.play();
     
     xPosition = 150;
     
     calliYShift = 0;
     calliIndex = -1;
+    
+    fft.fft.stream.setDeviceID(2);
+    fft.setup();
+    fft.fft.setup(16384 * 0.5);
+    fft.setNumFFTBins(nBandsToGet);
+    fft.setFFTpercentage(0.9);
 
 }
 
 
-//--------------------------------------------------------------
-void ofApp::musicChangePressed(){
-    
-    musicChangeIndex++;
-    musicChangeIndex = musicChangeIndex % 2;
-
-    glassscherben.play();
-    spacefunk.stop();
-    captureTimer = 9;
-
-    switch (musicChangeIndex) {
-        case 0:
-            break;
-
-        case 1:
-            glassscherben.stop();
-            spacefunk.play();
-//            captureTimer = 15;
-            break;
-
-        default:
-            break;
-    }
-    
-
-}
 
 
 //--------------------------------------------------------------
 void ofApp::update(){
 	
-	ofSoundUpdate();
+    fft.update();
     
-    glassscherben.play();
-    spacefunk.stop();
     captureTimer = 9;
 
-	
-	float * val = ofSoundGetSpectrum(nBandsToGet);		// request 128 values for fft
-	for (int i = 0;i < nBandsToGet; i++){
-		fftSmoothed[i] *= 0.9f;
-		if (fftSmoothed[i] < val[i]) fftSmoothed[i] = val[i];
-	}
-
     if(ofGetFrameNum()%captureTimer==0) {
-        Calligraphy _eCalligraphy;
-        _eCalligraphy.inputFftSmoothed(fftSmoothed);
-        
-        calligraphy.inputFftSmoothed(fftSmoothed);
-
-        calligraphies.push_back(_eCalligraphy);
-        calliIndex++;
-        
-        if (calligraphies.size()>0) {
-            
-            
-            float _changedX = (calliIndex%3) * 100 + 950;
-            float _changedY = calliYShift * 100 + 50;
-
-            if ((calliIndex%3==0)&&bClliXPosChange==false) {
-                calliYShift++;
-                bClliXPosChange = true;
-            }
-            
-            if (calliIndex%3==2){
-                bClliXPosChange = false;
-            }
-
-            calliPos.push_back( ofVec3f(_changedX, _changedY, 0) );
-            
-        }
-
-        if (calliIndex>21) {
-            calligraphies.erase(calligraphies.begin());
-            calliPos.erase(calliPos.begin());
-            calliYShift = 0;
-            calliIndex = 0;
-        }
-        
-
+        calligraphy.inputFftSmoothed(fft.getSpectrum());
     }
+    
+    
+//    if(ofGetFrameNum()%captureTimer==0) {
+//        Calligraphy _eCalligraphy;
+//        _eCalligraphy.inputFftSmoothed(fft.getSpectrum());
+//        
+//
+//        calligraphies.push_back(_eCalligraphy);
+//        calliIndex++;
+//        
+//        if (calligraphies.size()>0) {
+//            
+//            float _changedX = calliIndex % 3;
+//            float _changedY = calliYShift;
+//
+//            if ((calliIndex%3==0)&&bClliXPosChange==false) {
+//                calliYShift++;
+//                bClliXPosChange = true;
+//            }
+//            
+//            if (calliIndex%3==2){
+//                bClliXPosChange = false;
+//            }
+//
+//            calliPos.push_back( ofVec3f(_changedX, _changedY, 0) );
+//            
+//        }
+//
+//        if (calliIndex>21) {
+//            calligraphies.erase(calligraphies.begin());
+//            calliPos.erase(calliPos.begin());
+//            calliYShift = 0;
+//            calliIndex = 0;
+//        }
+//        
+//
+//    }
     
 }
 
 //--------------------------------------------------------------
 void ofApp::draw(){
 
-    ofSetColor(0, 50);
-    ofDrawRectangle(0, 0, ofGetWidth(), ofGetHeight());
+    ofPushMatrix();
+    
+    ofTranslate( mainOffSetXPos, mainOffSetYPos );
+    
+    baseArch.guideFrames();
+    baseArch.drawEdgeCover();
+    baseArch.guideLines();
+    baseArch.guidePoints();
+    
+    ofPopMatrix();
     
     
     ofPushMatrix();
-    ofTranslate(xPosition, 0);
+
+    ofTranslate( mainOffSetXPos, mainOffSetYPos );
 
     normalFFT();
     lineCircleFFT();
-    
     lineCircleCaptureFFT();
+    
+    
+    calligraphy.draw( baseArch.framesCenter[11][5].x, baseArch.framesCenter[11][5].y );
+
+//    for (int i=0; i<calligraphies.size(); i++) {
+//        calligraphies[i].draw( calliPos[i].x, calliPos[i].y );
+//    }
+    
+    
     ofPopMatrix();
     
 
-    
-    for (int i=0; i<calligraphies.size(); i++) {
-        calligraphies[i].drawCali( calliPos[i].x, calliPos[i].y );
-    }
+
     
     
-    calligraphy.drawCali(800, 300);
-    
-//    gui.draw();
     
 }
 
@@ -166,34 +140,36 @@ void ofApp::draw(){
 //--------------------------------------------------------------
 void ofApp::exit(){
     
-    ofSoundShutdown();
-    
-    glassscherben.unload();
-    spacefunk.unload();
-    fftSmoothed = NULL;
-    
 }
 
 
 //--------------------------------------------------------------
-void ofApp::normalFFT(float _yPos){
+void ofApp::normalFFT(){
+    
+    ofPushMatrix();
     
     ofPushStyle();
-    ofSetColor(255, 120);
+    
+    ofSetColor(255);
+
     ofNoFill();
     
-    float _height = 100;
-    float _widthStep = 20;
-    
+    float _heightRatio = 1;
+    float _width = (baseArch.fassadeCorner[1].x - baseArch.fassadeCorner[0].x) / nBandsToGet;
+
     for (int i = 0; i<nBandsToGet; i++){
-        float _w = (float)(_widthStep * nBandsToGet) / nBandsToGet;
-        float _h = -(fftSmoothed[i] * _height);
-        float _x = 100 + i * _w;
-        float _y = ofGetHeight() - _yPos;
+        
+        float _w = _width;
+        float _h = -fft.getSpectrum()[i] * _heightRatio;
+        float _x = baseArch.fassadeCorner[0].x + i * _w;
+        float _y = baseArch.fassadeCorner[3].y;
+
         ofDrawRectangle( _x, _y, _w, _h );
     }
     
     ofPopStyle();
+    
+    ofPopMatrix();
 
 }
 
@@ -201,52 +177,61 @@ void ofApp::normalFFT(float _yPos){
 //--------------------------------------------------------------
 void ofApp::lineCircleFFT(float _yPos){
     
-    ofPushStyle();
-    ofSetColor(255, 120);
     
-    float _height = 100;
-    float _xPos = 100;
-    float _widthStep = 20;
-
-    float _scaleUp = 5;
+    ofPushMatrix();
+    
+    ofPushStyle();
+    
+    ofSetColor(255);
+    
+    float _heightRatio = 1;
+    float _width = (baseArch.fassadeCorner[1].x - baseArch.fassadeCorner[0].x) / nBandsToGet;
 
     for (int i = 0;i < nBandsToGet-1; i++){
-        float _w = (float)(_widthStep * nBandsToGet) / nBandsToGet;
+        float _w = _width;
         
-        float _fftFactor1 = fftSmoothed[i] * ofMap( i, 0, nBandsToGet-1, 1, _scaleUp );
-        float _fftFactor2 = fftSmoothed[i+1] * ofMap( i+1, 0, nBandsToGet-1, 1, _scaleUp );
+        float _fftFactor1 = fft.getSpectrum()[i];
+        float _fftFactor2 = fft.getSpectrum()[i+1];
         
-        float _h1 = ofGetHeight() - _yPos - (_fftFactor1 * _height);
-        float _h2 = ofGetHeight() - _yPos - (_fftFactor2 * _height);
-        float _x1 = _xPos + i * _w;
-        float _x2 = _xPos + (i +1) * _w;
-        ofDrawLine( _x1, _h1, _x2, _h2 );
+        float _y1 = baseArch.fassadeCorner[3].y - _yPos - _fftFactor1;
+        float _y2 = baseArch.fassadeCorner[3].y - _yPos - _fftFactor2;
+        float _x1 = baseArch.fassadeCorner[0].x + i * _w;
+        float _x2 = baseArch.fassadeCorner[0].x + (i +1) * _w;
+        
+        ofDrawLine( _x1, _y1, _x2, _y2 );
     }
     
     ofPopStyle();
     
+
+    
     ofPushStyle();
-    ofSetColor(255, 120);
+    
+    ofSetColor(255);
 
     ofNoFill();
+    
     for (int i = 0;i < nBandsToGet; i++){
-        float _w = (float)(_widthStep * nBandsToGet) / nBandsToGet;
+        float _w = _width;
         
-        float _fftFactor1 = fftSmoothed[i] * ofMap( i, 0, nBandsToGet-1, 1, _scaleUp );
+        float _fftFactor1 = fft.getSpectrum()[i];
         
-        float _h1 = ofGetHeight() - _yPos - (_fftFactor1 * _height);
-        float _x1 = 100 + i * _w;
-        float _size = _fftFactor1 * 50;
-        ofDrawCircle( _x1, _h1, _size );
+        float _y1 = baseArch.fassadeCorner[3].y - _yPos - _fftFactor1;
+        float _x1 = baseArch.fassadeCorner[0].x + i * _w;
+        float _size = _fftFactor1;
+
+        ofDrawCircle( _x1, _y1, _size );
         
-        if(fftSmoothed[i] > 0.25){
+        if (fft.getSpectrum()[i] > 0.25){
             float _length = ofMap( _size, 0, 200, 0, 800 );
-            ofDrawLine( _x1, _h1, _length + _x1, _h1 );
+            ofDrawLine( _x1, _y1, _length + _x1, _y1 );
         }
         
     }
     
     ofPopStyle();
+    
+    ofPopMatrix();
     
 
 }
@@ -255,66 +240,69 @@ void ofApp::lineCircleFFT(float _yPos){
 //--------------------------------------------------------------
 void ofApp::lineCircleCaptureFFT(float _yPos){
     
-    
     ofPushStyle();
     
     ofNoFill();
 
-    int _index = 10;
-
-    float _height = 100;
-    float _widthStep = 40;
+    int _index = 20;
     
-    float _scaleUp = 0.3;
+    float _heightRatio = 1;
+    float _width = (baseArch.fassadeCorner[1].x - baseArch.fassadeCorner[0].x) / _index;
 
+    
     if(ofGetFrameNum()%captureTimer==0) {
+        
         captureFFTSmoothed.clear();
         captureFFTIndex.clear();
+        
         for(int i=0; i<_index; i++) {
             int _index = round(ofRandom(127));
             captureFFTIndex.push_back( _index );
-            captureFFTSmoothed.push_back( fftSmoothed[_index] );
+            captureFFTSmoothed.push_back( fft.getSpectrum()[_index] );
         }
+        
     } else {
         
-        ofSetColor(255, 120);
+        ofSetColor(255);
         
         for (int i = 0;i < _index-1; i++){
-            float _w = (float)(_widthStep * _index) / _index;
+            float _w = _width;
             
-            float _fftFactor1 = pow(captureFFTSmoothed[ i ], _scaleUp);
-            float _fftFactor2 = pow(captureFFTSmoothed[ i + 1 ], _scaleUp);
+            float _fftFactor1 = captureFFTSmoothed[ i ] * _heightRatio;
+            float _fftFactor2 = captureFFTSmoothed[ i + 1 ] * _heightRatio;
             
-            float _h1 = ofGetHeight() -  _yPos - (_fftFactor1 * _height);
-            float _h2 = ofGetHeight() -  _yPos - (_fftFactor2 * _height);
-            
-            float _x1 = 100 + i * _w;
-            float _x2 = 100 + (i + 1) * _w;
-            ofDrawLine( _x1, _h1, _x2, _h2 );
+            float _y1 = baseArch.fassadeCorner[3].y - _yPos - _fftFactor1;
+            float _y2 = baseArch.fassadeCorner[3].y - _yPos - _fftFactor2;
+            float _x1 = baseArch.fassadeCorner[0].x + i * _w;
+            float _x2 = baseArch.fassadeCorner[0].x + (i +1) * _w;
+
+            ofDrawLine( _x1, _y1, _x2, _y2 );
             
         }
 
         
         for (int i = 0;i < _index; i++){
-            float _w = (float)(_widthStep * _index) / _index;
+            float _w = _width;
             
-            float _fftFactor1 = pow(captureFFTSmoothed[ i ], _scaleUp);
+            float _fftFactor1 = captureFFTSmoothed[ i ] * _heightRatio;
             
-            float _h1 = ofGetHeight() -  _yPos - (_fftFactor1 * _height);
-            float _x1 = 100 + i * _w;
-            float _size = _fftFactor1 * 20;
-            ofDrawCircle( _x1, _h1, 20 );
+            float _y1 = baseArch.fassadeCorner[3].y - _yPos - _fftFactor1;
+            float _x1 = baseArch.fassadeCorner[0].x + i * _w;
+            ofDrawCircle( _x1, _y1, 20 );
 
 
         }
         
         for (int i = 0;i < _index; i++){
-            float _w = (float)(_widthStep * _index) / _index;
-            float _x1 = 100 + i * _w;
-            ofDrawBitmapString(captureFFTIndex[i], _x1, ofGetHeight() - _yPos + 35);
+            float _w = _width;
+            float _fftFactor1 = captureFFTSmoothed[ i ] * _heightRatio;
+
+            float _x1 = baseArch.fassadeCorner[0].x + i * _w;
+            float _y1 = baseArch.fassadeCorner[3].y - _yPos - _fftFactor1;
+            ofDrawBitmapString(captureFFTIndex[i], _x1, _y1);
 
             char _fqString = (char)( captureFFTIndex[i] );
-            ofDrawBitmapString(_fqString, _x1, ofGetHeight() - _yPos + 50);
+            ofDrawBitmapString(_fqString, _x1, _y1);
         }
         
         
@@ -368,6 +356,11 @@ void ofApp::mouseExited(int x, int y){
 
 //--------------------------------------------------------------
 void ofApp::windowResized(int w, int h){
+
+    mainOffSetXPos = (ofGetWidth() - (baseArch.fassadeCorner[0].x + baseArch.fassadeCorner[1].x)) * 0.5;
+    mainOffSetYPos = (ofGetHeight() - (baseArch.fassadeCorner[0].y + baseArch.fassadeCorner[3].y)) * 0.5;
+    baseArch.mainOffSetXPos = mainOffSetXPos;
+    baseArch.mainOffSetYPos = mainOffSetYPos;
 
 }
 

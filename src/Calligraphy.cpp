@@ -10,50 +10,59 @@
 
 
 //--------------------------------------------------------------
-void Calligraphy::inputFftSmoothed(float *_fft){
+Calligraphy::Calligraphy(){
+ 
+    calliSize = 20;
+    
+}
+
+
+
+//--------------------------------------------------------------
+Calligraphy::~Calligraphy(){
+    
+}
+
+
+
+
+
+//--------------------------------------------------------------
+void Calligraphy::inputFftSmoothed(vector<float> _fft){
     
     fftSmoothed = _fft;
     
-    int _index = 10;
-    
-    captureFFTSmoothed.clear();
-    captureFFTIndex.clear();
-    for(int i=0; i<_index; i++) {
-        int _index = round(ofRandom(127));
-        captureFFTIndex.push_back( _index );
-        captureFFTSmoothed.push_back( fftSmoothed[_index] );
+    captureFFTSmoothed.resize(calliSize);
+    captureFFTIndex.resize(calliSize);
+
+    for(int i=0; i<calliSize; i++) {
+
+        int _index = round( ofRandom(60) );
+        captureFFTIndex[i] = _index;
+        captureFFTSmoothed[i] = fftSmoothed[_index];
+        
     }
     
 }
 
 
 //--------------------------------------------------------------
-void Calligraphy::drawCali(float _xPos, float _yPos){
+void Calligraphy::draw(float _xPos, float _yPos){
     
     ofPushStyle();
     
     ofNoFill();
     
-    int _index = 10;
-    
-    
-    float _height = 100;
-    float _widthStep = 40;
-    
-    float _scaleUp = 0.3;
-    
-    
-    ofSetColor(255, 120);
+    ofSetColor(255);
     
     ofBeginShape();
     
-    for (int i = 0;i < _index; i++){
-        float _fftFactor1 = pow(captureFFTSmoothed[ i ], _scaleUp);
-        float _y1 = ofMap( _fftFactor1, 0, 1, 20, 128 );
+    for (int i=0; i<calliSize; i++){
+        float _fftFactor1 = captureFFTSmoothed[i] * 5;
         float _x1 = captureFFTIndex[i];
         
-        float _xCircle = cos( captureFFTIndex[i] * 360 / 127.0 ) * _y1;
-        float _yCircle = sin( captureFFTIndex[i] * 360 / 127.0 ) * _y1;
+        float _xCircle = cos( captureFFTIndex[i] * 36 / 127.0 ) * _fftFactor1;
+        float _yCircle = sin( captureFFTIndex[i] * 36 / 127.0 ) * _fftFactor1;
         
         ofCurveVertex(_xCircle + _xPos, _yCircle + _yPos);
         

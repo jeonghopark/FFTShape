@@ -7,7 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07E4C6A87C7CDD85C9E53671 /* ofxFftw.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B7B68934B136125FA5AC83EA /* ofxFftw.cpp */; };
 		13DBDF3E91D15454CDCE3F81 /* ofxLabel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 807DA2130DDB7679341206D8 /* ofxLabel.cpp */; };
+		28850C8A0355962C0F440A9D /* kiss_fft.c in Sources */ = {isa = PBXBuildFile; fileRef = 228731134D1728A04B14BDE7 /* kiss_fft.c */; };
+		4376D8F5342C0D1674CAF6CA /* kiss_fftr.c in Sources */ = {isa = PBXBuildFile; fileRef = 06B20053A9C1287893D9237E /* kiss_fftr.c */; };
+		504EB236D12B34D134F3A424 /* ofxEasyFft.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B5BCBED2BF3BD6DDD2A0C398 /* ofxEasyFft.cpp */; };
+		5583EC47D4CBDDA0B3E4D428 /* ofxFftBasic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A1E3997330964AB84815858 /* ofxFftBasic.cpp */; };
 		5DB0FD9C47C8AED393543077 /* ofxToggle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CB61A3F6E62286D73F419FA /* ofxToggle.cpp */; };
 		5DE87C0399C3D16E809524E4 /* ofxPanel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3FE97224BEE70C8CAC2006DA /* ofxPanel.cpp */; };
 		6D46844280E4B74216C8464F /* Calligraphy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1791D73DFCE685A0B703528F /* Calligraphy.cpp */; };
@@ -15,12 +20,14 @@
 		75848DD2538F3F5D9ABC6517 /* ofxCsv.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E3894C818E1A243545D4B9FC /* ofxCsv.cpp */; };
 		883A19B4FB8259967B85B9FF /* ofxSliderGroup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D8CE42EAFA1B5022BB6FFC4B /* ofxSliderGroup.cpp */; };
 		90A67B674EF9B104D82A5143 /* ofxBaseGui.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 978FC5AD324430DE5A0A5D92 /* ofxBaseGui.cpp */; };
-		A8EB877E1BC67869004650B8 /* BaseArch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8EB877A1BC67869004650B8 /* BaseArch.cpp */; settings = {ASSET_TAGS = (); }; };
-		A8EB877F1BC67869004650B8 /* GuiApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8EB877C1BC67869004650B8 /* GuiApp.cpp */; settings = {ASSET_TAGS = (); }; };
+		A81811CD1BCC203300D09C5E /* BaseArch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A81811C91BCC203300D09C5E /* BaseArch.cpp */; settings = {ASSET_TAGS = (); }; };
+		A81811CE1BCC203400D09C5E /* GuiApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A81811CB1BCC203300D09C5E /* GuiApp.cpp */; settings = {ASSET_TAGS = (); }; };
+		B27047E79090878383CB00A8 /* ofxFft.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8B0D309B7195C036C9274D16 /* ofxFft.cpp */; };
 		BDED0ECDB2BE0FD939C38AEB /* ofxButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7C3ED944D179B4C151BDD311 /* ofxButton.cpp */; };
 		E4328149138ABC9F0047C5CB /* openFrameworksDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4328148138ABC890047C5CB /* openFrameworksDebug.a */; };
 		E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4B69E1D0A3A1BDC003C02F2 /* main.cpp */; };
 		E4B69E210A3A1BDC003C02F2 /* ofApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4B69E1E0A3A1BDC003C02F2 /* ofApp.cpp */; };
+		E5E7676A92AF9C0C5D7C1518 /* ofxProcessFFT.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1BFC6CAC6D4C91E149F40B0C /* ofxProcessFFT.cpp */; };
 		EB0E84BEAD177E6CB08DB4EF /* ofxGuiGroup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6C98999A0E2181C67387FF65 /* ofxGuiGroup.cpp */; };
 /* End PBXBuildFile section */
 
@@ -54,31 +61,46 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		06B20053A9C1287893D9237E /* kiss_fftr.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = kiss_fftr.c; path = ../../../../openFrameworks/addons/ofxFft/libs/kiss/kiss_fftr.c; sourceTree = SOURCE_ROOT; };
+		0A1E3997330964AB84815858 /* ofxFftBasic.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxFftBasic.cpp; path = ../../../../openFrameworks/addons/ofxFft/src/ofxFftBasic.cpp; sourceTree = SOURCE_ROOT; };
 		1791D73DFCE685A0B703528F /* Calligraphy.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = Calligraphy.cpp; path = src/Calligraphy.cpp; sourceTree = SOURCE_ROOT; };
+		1A0D38D30E328622E9841825 /* ofxFftBasic.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxFftBasic.h; path = ../../../../openFrameworks/addons/ofxFft/src/ofxFftBasic.h; sourceTree = SOURCE_ROOT; };
+		1BFC6CAC6D4C91E149F40B0C /* ofxProcessFFT.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxProcessFFT.cpp; path = ../../../../openFrameworks/addons/ofxFft/src/ofxProcessFFT.cpp; sourceTree = SOURCE_ROOT; };
+		228731134D1728A04B14BDE7 /* kiss_fft.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = kiss_fft.c; path = ../../../../openFrameworks/addons/ofxFft/libs/kiss/kiss_fft.c; sourceTree = SOURCE_ROOT; };
 		2C36B84F1D7547C03CD01C28 /* ofxButton.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxButton.h; path = ../../../../openFrameworks/addons/ofxGui/src/ofxButton.h; sourceTree = SOURCE_ROOT; };
 		2CB61A3F6E62286D73F419FA /* ofxToggle.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxToggle.cpp; path = ../../../../openFrameworks/addons/ofxGui/src/ofxToggle.cpp; sourceTree = SOURCE_ROOT; };
+		2FAD07A997E61A8ED65D935F /* ofxFft.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxFft.h; path = ../../../../openFrameworks/addons/ofxFft/src/ofxFft.h; sourceTree = SOURCE_ROOT; };
 		314308689700F38F9C218007 /* Calligraphy.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = Calligraphy.h; path = src/Calligraphy.h; sourceTree = SOURCE_ROOT; };
 		3963E2B33C025955ED497D1C /* ofxCsv.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxCsv.h; path = ../../../../openFrameworks/addons/ofxCsv/src/ofxCsv.h; sourceTree = SOURCE_ROOT; };
 		3FE97224BEE70C8CAC2006DA /* ofxPanel.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxPanel.cpp; path = ../../../../openFrameworks/addons/ofxGui/src/ofxPanel.cpp; sourceTree = SOURCE_ROOT; };
+		4A85D5E16999806ECDF73F1B /* ofxProcessFFT.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxProcessFFT.h; path = ../../../../openFrameworks/addons/ofxFft/src/ofxProcessFFT.h; sourceTree = SOURCE_ROOT; };
 		6B0340B37FFF274102BE3CCC /* ofxSlider.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxSlider.cpp; path = ../../../../openFrameworks/addons/ofxGui/src/ofxSlider.cpp; sourceTree = SOURCE_ROOT; };
 		6C98999A0E2181C67387FF65 /* ofxGuiGroup.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxGuiGroup.cpp; path = ../../../../openFrameworks/addons/ofxGui/src/ofxGuiGroup.cpp; sourceTree = SOURCE_ROOT; };
+		7B024EAE4849490D99751855 /* ofxFftw.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxFftw.h; path = ../../../../openFrameworks/addons/ofxFft/src/ofxFftw.h; sourceTree = SOURCE_ROOT; };
 		7C3ED944D179B4C151BDD311 /* ofxButton.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxButton.cpp; path = ../../../../openFrameworks/addons/ofxGui/src/ofxButton.cpp; sourceTree = SOURCE_ROOT; };
 		7EA25DDCA1D54C3C8842C3D8 /* ofxToggle.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxToggle.h; path = ../../../../openFrameworks/addons/ofxGui/src/ofxToggle.h; sourceTree = SOURCE_ROOT; };
 		807DA2130DDB7679341206D8 /* ofxLabel.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxLabel.cpp; path = ../../../../openFrameworks/addons/ofxGui/src/ofxLabel.cpp; sourceTree = SOURCE_ROOT; };
+		86E5F34CFC41FD0B404EF071 /* _kiss_fft_guts.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = _kiss_fft_guts.h; path = ../../../../openFrameworks/addons/ofxFft/libs/kiss/_kiss_fft_guts.h; sourceTree = SOURCE_ROOT; };
+		8B0D309B7195C036C9274D16 /* ofxFft.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxFft.cpp; path = ../../../../openFrameworks/addons/ofxFft/src/ofxFft.cpp; sourceTree = SOURCE_ROOT; };
+		9519D8D46B0CF804CB8A6DBC /* kiss_fftr.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = kiss_fftr.h; path = ../../../../openFrameworks/addons/ofxFft/libs/kiss/kiss_fftr.h; sourceTree = SOURCE_ROOT; };
 		97332472E61EC4DA03FB7532 /* ofxSlider.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxSlider.h; path = ../../../../openFrameworks/addons/ofxGui/src/ofxSlider.h; sourceTree = SOURCE_ROOT; };
 		978FC5AD324430DE5A0A5D92 /* ofxBaseGui.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxBaseGui.cpp; path = ../../../../openFrameworks/addons/ofxGui/src/ofxBaseGui.cpp; sourceTree = SOURCE_ROOT; };
-		A8EB877A1BC67869004650B8 /* BaseArch.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = BaseArch.cpp; path = ../../bpii_Calibration/src/BaseArch.cpp; sourceTree = "<group>"; };
-		A8EB877B1BC67869004650B8 /* BaseArch.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = BaseArch.h; path = ../../bpii_Calibration/src/BaseArch.h; sourceTree = "<group>"; };
-		A8EB877C1BC67869004650B8 /* GuiApp.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = GuiApp.cpp; path = ../../bpii_Calibration/src/GuiApp.cpp; sourceTree = "<group>"; };
-		A8EB877D1BC67869004650B8 /* GuiApp.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = GuiApp.h; path = ../../bpii_Calibration/src/GuiApp.h; sourceTree = "<group>"; };
+		A0268087F489D84B4166524E /* fftw3.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = fftw3.h; path = ../../../../openFrameworks/addons/ofxFft/libs/fftw/include/fftw3.h; sourceTree = SOURCE_ROOT; };
+		A81811C91BCC203300D09C5E /* BaseArch.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = BaseArch.cpp; path = ../../bpii_Calibration/src/BaseArch.cpp; sourceTree = "<group>"; };
+		A81811CA1BCC203300D09C5E /* BaseArch.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = BaseArch.h; path = ../../bpii_Calibration/src/BaseArch.h; sourceTree = "<group>"; };
+		A81811CB1BCC203300D09C5E /* GuiApp.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = GuiApp.cpp; path = ../../bpii_Calibration/src/GuiApp.cpp; sourceTree = "<group>"; };
+		A81811CC1BCC203300D09C5E /* GuiApp.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = GuiApp.h; path = ../../bpii_Calibration/src/GuiApp.h; sourceTree = "<group>"; };
+		B5BCBED2BF3BD6DDD2A0C398 /* ofxEasyFft.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxEasyFft.cpp; path = ../../../../openFrameworks/addons/ofxFft/src/ofxEasyFft.cpp; sourceTree = SOURCE_ROOT; };
+		B7B68934B136125FA5AC83EA /* ofxFftw.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxFftw.cpp; path = ../../../../openFrameworks/addons/ofxFft/src/ofxFftw.cpp; sourceTree = SOURCE_ROOT; };
 		C0B01119435D4672DF3FF84B /* ofxGui.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxGui.h; path = ../../../../openFrameworks/addons/ofxGui/src/ofxGui.h; sourceTree = SOURCE_ROOT; };
 		C7C85D012956D84B9210CE5A /* ofxPanel.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxPanel.h; path = ../../../../openFrameworks/addons/ofxGui/src/ofxPanel.h; sourceTree = SOURCE_ROOT; };
+		CA96888CD709D37E5E81D727 /* ofxEasyFft.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxEasyFft.h; path = ../../../../openFrameworks/addons/ofxFft/src/ofxEasyFft.h; sourceTree = SOURCE_ROOT; };
 		D8CE42EAFA1B5022BB6FFC4B /* ofxSliderGroup.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxSliderGroup.cpp; path = ../../../../openFrameworks/addons/ofxGui/src/ofxSliderGroup.cpp; sourceTree = SOURCE_ROOT; };
 		E02A8EBF0C4EDC22A5BE4011 /* ofxSliderGroup.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxSliderGroup.h; path = ../../../../openFrameworks/addons/ofxGui/src/ofxSliderGroup.h; sourceTree = SOURCE_ROOT; };
 		E35C9532577449CCB61F814A /* ofxBaseGui.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxBaseGui.h; path = ../../../../openFrameworks/addons/ofxGui/src/ofxBaseGui.h; sourceTree = SOURCE_ROOT; };
 		E3894C818E1A243545D4B9FC /* ofxCsv.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxCsv.cpp; path = ../../../../openFrameworks/addons/ofxCsv/src/ofxCsv.cpp; sourceTree = SOURCE_ROOT; };
 		E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = openFrameworksLib.xcodeproj; path = ../../../../openFrameworks/libs/openFrameworksCompiled/project/osx/openFrameworksLib.xcodeproj; sourceTree = SOURCE_ROOT; };
-		E4B69B5B0A3A1756003C02F2 /* MusicFFT_scoreDebug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicFFT_scoreDebug.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4B69B5B0A3A1756003C02F2 /* FFTShapeDebug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FFTShapeDebug.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4B69E1D0A3A1BDC003C02F2 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = src/main.cpp; sourceTree = SOURCE_ROOT; };
 		E4B69E1E0A3A1BDC003C02F2 /* ofApp.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofApp.cpp; path = src/ofApp.cpp; sourceTree = SOURCE_ROOT; };
 		E4B69E1F0A3A1BDC003C02F2 /* ofApp.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = ofApp.h; path = src/ofApp.h; sourceTree = SOURCE_ROOT; };
@@ -87,6 +109,7 @@
 		E4EB6923138AFD0F00A09F29 /* Project.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Project.xcconfig; sourceTree = "<group>"; };
 		F41A373B07B06D6E50036BA4 /* ofxLabel.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxLabel.h; path = ../../../../openFrameworks/addons/ofxGui/src/ofxLabel.h; sourceTree = SOURCE_ROOT; };
 		FBAF68694A694072BD8D4217 /* ofxGuiGroup.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxGuiGroup.h; path = ../../../../openFrameworks/addons/ofxGui/src/ofxGuiGroup.h; sourceTree = SOURCE_ROOT; };
+		FDD983F842D413D8D922D389 /* kiss_fft.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = kiss_fft.h; path = ../../../../openFrameworks/addons/ofxFft/libs/kiss/kiss_fft.h; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +124,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		14D2E3EE0233F84B1B324DD9 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				B5BCBED2BF3BD6DDD2A0C398 /* ofxEasyFft.cpp */,
+				CA96888CD709D37E5E81D727 /* ofxEasyFft.h */,
+				8B0D309B7195C036C9274D16 /* ofxFft.cpp */,
+				2FAD07A997E61A8ED65D935F /* ofxFft.h */,
+				0A1E3997330964AB84815858 /* ofxFftBasic.cpp */,
+				1A0D38D30E328622E9841825 /* ofxFftBasic.h */,
+				B7B68934B136125FA5AC83EA /* ofxFftw.cpp */,
+				7B024EAE4849490D99751855 /* ofxFftw.h */,
+				1BFC6CAC6D4C91E149F40B0C /* ofxProcessFFT.cpp */,
+				4A85D5E16999806ECDF73F1B /* ofxProcessFFT.h */,
+			);
+			name = src;
+			sourceTree = "<group>";
+		};
 		412E4BCA71876A3B006CE76E /* src */ = {
 			isa = PBXGroup;
 			children = (
@@ -133,6 +173,35 @@
 			name = local_addons;
 			sourceTree = "<group>";
 		};
+		72C89FAFAC11F96856792042 /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				A0535D33570F65575182C18F /* fftw */,
+				A2C4D2900B6384FDE5E77208 /* kiss */,
+			);
+			name = libs;
+			sourceTree = "<group>";
+		};
+		A0535D33570F65575182C18F /* fftw */ = {
+			isa = PBXGroup;
+			children = (
+				F2022DF37286FECB8B9BA5B2 /* include */,
+			);
+			name = fftw;
+			sourceTree = "<group>";
+		};
+		A2C4D2900B6384FDE5E77208 /* kiss */ = {
+			isa = PBXGroup;
+			children = (
+				86E5F34CFC41FD0B404EF071 /* _kiss_fft_guts.h */,
+				228731134D1728A04B14BDE7 /* kiss_fft.c */,
+				FDD983F842D413D8D922D389 /* kiss_fft.h */,
+				06B20053A9C1287893D9237E /* kiss_fftr.c */,
+				9519D8D46B0CF804CB8A6DBC /* kiss_fftr.h */,
+			);
+			name = kiss;
+			sourceTree = "<group>";
+		};
 		A763ED608B35AE3310251DEE /* src */ = {
 			isa = PBXGroup;
 			children = (
@@ -161,9 +230,19 @@
 			isa = PBXGroup;
 			children = (
 				5CFAC65997CFC4C36CD009B7 /* ofxCsv */,
+				BBC2B4228932C2AACC6701CF /* ofxFft */,
 				480A780D8D0308AE4A368801 /* ofxGui */,
 			);
 			name = addons;
+			sourceTree = "<group>";
+		};
+		BBC2B4228932C2AACC6701CF /* ofxFft */ = {
+			isa = PBXGroup;
+			children = (
+				14D2E3EE0233F84B1B324DD9 /* src */,
+				72C89FAFAC11F96856792042 /* libs */,
+			);
+			name = ofxFft;
 			sourceTree = "<group>";
 		};
 		E4328144138ABC890047C5CB /* Products */ = {
@@ -183,7 +262,7 @@
 				E4EEC9E9138DF44700A80321 /* openFrameworks */,
 				BB4B014C10F69532006C3DED /* addons */,
 				6948EE371B920CB800B5AC1A /* local_addons */,
-				E4B69B5B0A3A1756003C02F2 /* MusicFFT_scoreDebug.app */,
+				E4B69B5B0A3A1756003C02F2 /* FFTShapeDebug.app */,
 			);
 			sourceTree = "<group>";
 		};
@@ -193,12 +272,12 @@
 				E4B69E1D0A3A1BDC003C02F2 /* main.cpp */,
 				E4B69E1E0A3A1BDC003C02F2 /* ofApp.cpp */,
 				E4B69E1F0A3A1BDC003C02F2 /* ofApp.h */,
-				A8EB877A1BC67869004650B8 /* BaseArch.cpp */,
-				A8EB877B1BC67869004650B8 /* BaseArch.h */,
-				A8EB877C1BC67869004650B8 /* GuiApp.cpp */,
-				A8EB877D1BC67869004650B8 /* GuiApp.h */,
 				1791D73DFCE685A0B703528F /* Calligraphy.cpp */,
 				314308689700F38F9C218007 /* Calligraphy.h */,
+				A81811C91BCC203300D09C5E /* BaseArch.cpp */,
+				A81811CA1BCC203300D09C5E /* BaseArch.h */,
+				A81811CB1BCC203300D09C5E /* GuiApp.cpp */,
+				A81811CC1BCC203300D09C5E /* GuiApp.h */,
 			);
 			path = src;
 			sourceTree = SOURCE_ROOT;
@@ -212,12 +291,20 @@
 			name = openFrameworks;
 			sourceTree = "<group>";
 		};
+		F2022DF37286FECB8B9BA5B2 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				A0268087F489D84B4166524E /* fftw3.h */,
+			);
+			name = include;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E4B69B5A0A3A1756003C02F2 /* MusicFFT_score */ = {
+		E4B69B5A0A3A1756003C02F2 /* FFTShape */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E4B69B5F0A3A1757003C02F2 /* Build configuration list for PBXNativeTarget "MusicFFT_score" */;
+			buildConfigurationList = E4B69B5F0A3A1757003C02F2 /* Build configuration list for PBXNativeTarget "FFTShape" */;
 			buildPhases = (
 				E4B69B580A3A1756003C02F2 /* Sources */,
 				E4B69B590A3A1756003C02F2 /* Frameworks */,
@@ -229,9 +316,9 @@
 			dependencies = (
 				E4EEB9AC138B136A00A80321 /* PBXTargetDependency */,
 			);
-			name = MusicFFT_score;
+			name = FFTShape;
 			productName = myOFApp;
-			productReference = E4B69B5B0A3A1756003C02F2 /* MusicFFT_scoreDebug.app */;
+			productReference = E4B69B5B0A3A1756003C02F2 /* FFTShapeDebug.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -242,7 +329,7 @@
 			attributes = {
 				LastUpgradeCheck = 0600;
 			};
-			buildConfigurationList = E4B69B4D0A3A1720003C02F2 /* Build configuration list for PBXProject "MusicFFT_score" */;
+			buildConfigurationList = E4B69B4D0A3A1720003C02F2 /* Build configuration list for PBXProject "FFTShape" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -263,7 +350,7 @@
 			);
 			projectRoot = "";
 			targets = (
-				E4B69B5A0A3A1756003C02F2 /* MusicFFT_score */,
+				E4B69B5A0A3A1756003C02F2 /* FFTShape */,
 			);
 		};
 /* End PBXProject section */
@@ -303,14 +390,21 @@
 				E4B69E210A3A1BDC003C02F2 /* ofApp.cpp in Sources */,
 				6D46844280E4B74216C8464F /* Calligraphy.cpp in Sources */,
 				75848DD2538F3F5D9ABC6517 /* ofxCsv.cpp in Sources */,
+				504EB236D12B34D134F3A424 /* ofxEasyFft.cpp in Sources */,
+				B27047E79090878383CB00A8 /* ofxFft.cpp in Sources */,
+				A81811CD1BCC203300D09C5E /* BaseArch.cpp in Sources */,
+				5583EC47D4CBDDA0B3E4D428 /* ofxFftBasic.cpp in Sources */,
+				07E4C6A87C7CDD85C9E53671 /* ofxFftw.cpp in Sources */,
+				E5E7676A92AF9C0C5D7C1518 /* ofxProcessFFT.cpp in Sources */,
+				28850C8A0355962C0F440A9D /* kiss_fft.c in Sources */,
+				A81811CE1BCC203400D09C5E /* GuiApp.cpp in Sources */,
+				4376D8F5342C0D1674CAF6CA /* kiss_fftr.c in Sources */,
 				90A67B674EF9B104D82A5143 /* ofxBaseGui.cpp in Sources */,
 				BDED0ECDB2BE0FD939C38AEB /* ofxButton.cpp in Sources */,
 				EB0E84BEAD177E6CB08DB4EF /* ofxGuiGroup.cpp in Sources */,
 				13DBDF3E91D15454CDCE3F81 /* ofxLabel.cpp in Sources */,
 				5DE87C0399C3D16E809524E4 /* ofxPanel.cpp in Sources */,
 				72F586B1E35F0C5BCDB2003D /* ofxSlider.cpp in Sources */,
-				A8EB877E1BC67869004650B8 /* BaseArch.cpp in Sources */,
-				A8EB877F1BC67869004650B8 /* GuiApp.cpp in Sources */,
 				883A19B4FB8259967B85B9FF /* ofxSliderGroup.cpp in Sources */,
 				5DB0FD9C47C8AED393543077 /* ofxToggle.cpp in Sources */,
 			);
@@ -350,6 +444,13 @@
 					"$(OF_CORE_HEADERS)",
 					src,
 					../../../../openFrameworks/addons/ofxCsv/src,
+					../../../../openFrameworks/addons/ofxFft/libs,
+					../../../../openFrameworks/addons/ofxFft/libs/fftw,
+					../../../../openFrameworks/addons/ofxFft/libs/fftw/include,
+					../../../../openFrameworks/addons/ofxFft/libs/fftw/lib,
+					../../../../openFrameworks/addons/ofxFft/libs/fftw/lib/osx,
+					../../../../openFrameworks/addons/ofxFft/libs/kiss,
+					../../../../openFrameworks/addons/ofxFft/src,
 					../../../../openFrameworks/addons/ofxGui/src,
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
@@ -357,6 +458,16 @@
 				OTHER_CPLUSPLUSFLAGS = (
 					"-D__MACOSX_CORE__",
 					"-mtune=native",
+				);
+				OTHER_LDFLAGS = (
+					"$(OF_CORE_FRAMEWORKS)",
+					"$(OF_CORE_LIBS)",
+					../../../../openFrameworks/addons/ofxFft/libs/fftw/lib/osx/libfftw3.a,
+					../../../../openFrameworks/addons/ofxFft/libs/fftw/lib/osx/libfftw3_omp.a,
+					../../../../openFrameworks/addons/ofxFft/libs/fftw/lib/osx/libfftw3_threads.a,
+					../../../../openFrameworks/addons/ofxFft/libs/fftw/lib/osx/libfftw3f.a,
+					../../../../openFrameworks/addons/ofxFft/libs/fftw/lib/osx/libfftw3f_omp.a,
+					../../../../openFrameworks/addons/ofxFft/libs/fftw/lib/osx/libfftw3f_threads.a,
 				);
 				SDKROOT = macosx;
 			};
@@ -386,12 +497,29 @@
 					"$(OF_CORE_HEADERS)",
 					src,
 					../../../../openFrameworks/addons/ofxCsv/src,
+					../../../../openFrameworks/addons/ofxFft/libs,
+					../../../../openFrameworks/addons/ofxFft/libs/fftw,
+					../../../../openFrameworks/addons/ofxFft/libs/fftw/include,
+					../../../../openFrameworks/addons/ofxFft/libs/fftw/lib,
+					../../../../openFrameworks/addons/ofxFft/libs/fftw/lib/osx,
+					../../../../openFrameworks/addons/ofxFft/libs/kiss,
+					../../../../openFrameworks/addons/ofxFft/src,
 					../../../../openFrameworks/addons/ofxGui/src,
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				OTHER_CPLUSPLUSFLAGS = (
 					"-D__MACOSX_CORE__",
 					"-mtune=native",
+				);
+				OTHER_LDFLAGS = (
+					"$(OF_CORE_FRAMEWORKS)",
+					"$(OF_CORE_LIBS)",
+					../../../../openFrameworks/addons/ofxFft/libs/fftw/lib/osx/libfftw3.a,
+					../../../../openFrameworks/addons/ofxFft/libs/fftw/lib/osx/libfftw3_omp.a,
+					../../../../openFrameworks/addons/ofxFft/libs/fftw/lib/osx/libfftw3_threads.a,
+					../../../../openFrameworks/addons/ofxFft/libs/fftw/lib/osx/libfftw3f.a,
+					../../../../openFrameworks/addons/ofxFft/libs/fftw/lib/osx/libfftw3f_omp.a,
+					../../../../openFrameworks/addons/ofxFft/libs/fftw/lib/osx/libfftw3f_threads.a,
 				);
 				SDKROOT = macosx;
 			};
@@ -415,6 +543,13 @@
 					"$(OF_CORE_HEADERS)",
 					src,
 					../../../../openFrameworks/addons/ofxCsv/src,
+					../../../../openFrameworks/addons/ofxFft/libs,
+					../../../../openFrameworks/addons/ofxFft/libs/fftw,
+					../../../../openFrameworks/addons/ofxFft/libs/fftw/include,
+					../../../../openFrameworks/addons/ofxFft/libs/fftw/lib,
+					../../../../openFrameworks/addons/ofxFft/libs/fftw/lib/osx,
+					../../../../openFrameworks/addons/ofxFft/libs/kiss,
+					../../../../openFrameworks/addons/ofxFft/src,
 					../../../../openFrameworks/addons/ofxGui/src,
 				);
 				ICON = "$(ICON_NAME_DEBUG)";
@@ -422,7 +557,17 @@
 				INFOPLIST_FILE = "openFrameworks-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				PRODUCT_NAME = "$(TARGET_NAME)Debug";
+				OTHER_LDFLAGS = (
+					"$(OF_CORE_FRAMEWORKS)",
+					"$(OF_CORE_LIBS)",
+					../../../../openFrameworks/addons/ofxFft/libs/fftw/lib/osx/libfftw3.a,
+					../../../../openFrameworks/addons/ofxFft/libs/fftw/lib/osx/libfftw3_omp.a,
+					../../../../openFrameworks/addons/ofxFft/libs/fftw/lib/osx/libfftw3_threads.a,
+					../../../../openFrameworks/addons/ofxFft/libs/fftw/lib/osx/libfftw3f.a,
+					../../../../openFrameworks/addons/ofxFft/libs/fftw/lib/osx/libfftw3f_omp.a,
+					../../../../openFrameworks/addons/ofxFft/libs/fftw/lib/osx/libfftw3f_threads.a,
+				);
+				PRODUCT_NAME = FFTShapeDebug;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -444,6 +589,13 @@
 					"$(OF_CORE_HEADERS)",
 					src,
 					../../../../openFrameworks/addons/ofxCsv/src,
+					../../../../openFrameworks/addons/ofxFft/libs,
+					../../../../openFrameworks/addons/ofxFft/libs/fftw,
+					../../../../openFrameworks/addons/ofxFft/libs/fftw/include,
+					../../../../openFrameworks/addons/ofxFft/libs/fftw/lib,
+					../../../../openFrameworks/addons/ofxFft/libs/fftw/lib/osx,
+					../../../../openFrameworks/addons/ofxFft/libs/kiss,
+					../../../../openFrameworks/addons/ofxFft/src,
 					../../../../openFrameworks/addons/ofxGui/src,
 				);
 				ICON = "$(ICON_NAME_RELEASE)";
@@ -451,7 +603,17 @@
 				INFOPLIST_FILE = "openFrameworks-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				OTHER_LDFLAGS = (
+					"$(OF_CORE_FRAMEWORKS)",
+					"$(OF_CORE_LIBS)",
+					../../../../openFrameworks/addons/ofxFft/libs/fftw/lib/osx/libfftw3.a,
+					../../../../openFrameworks/addons/ofxFft/libs/fftw/lib/osx/libfftw3_omp.a,
+					../../../../openFrameworks/addons/ofxFft/libs/fftw/lib/osx/libfftw3_threads.a,
+					../../../../openFrameworks/addons/ofxFft/libs/fftw/lib/osx/libfftw3f.a,
+					../../../../openFrameworks/addons/ofxFft/libs/fftw/lib/osx/libfftw3f_omp.a,
+					../../../../openFrameworks/addons/ofxFft/libs/fftw/lib/osx/libfftw3f_threads.a,
+				);
+				PRODUCT_NAME = FFTShapeDebug;
 				WRAPPER_EXTENSION = app;
 				baseConfigurationReference = E4EB6923138AFD0F00A09F29;
 			};
@@ -460,7 +622,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E4B69B4D0A3A1720003C02F2 /* Build configuration list for PBXProject "MusicFFT_score" */ = {
+		E4B69B4D0A3A1720003C02F2 /* Build configuration list for PBXProject "FFTShape" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E4B69B4E0A3A1720003C02F2 /* Debug */,
@@ -469,7 +631,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E4B69B5F0A3A1757003C02F2 /* Build configuration list for PBXNativeTarget "MusicFFT_score" */ = {
+		E4B69B5F0A3A1757003C02F2 /* Build configuration list for PBXNativeTarget "FFTShape" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E4B69B600A3A1757003C02F2 /* Debug */,

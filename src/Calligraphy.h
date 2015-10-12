@@ -14,17 +14,20 @@
 class Calligraphy{
     
     
-    float * fftSmoothed;
+    vector<float> fftSmoothed;
     vector<float> captureFFTSmoothed;
     vector<int> captureFFTIndex;
     
     
 public :
 
-    void inputFftSmoothed(float * _fft);
-    void drawCali(float _xPos, float _yPos);
+    Calligraphy();
+    ~Calligraphy();
     
+    void inputFftSmoothed(vector<float> );
+    void draw(float _xPos, float _yPos);
     
+    int calliSize;
 };
 
 

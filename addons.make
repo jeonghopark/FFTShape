@@ -1,2 +1,3 @@
 ofxCsv
+ofxFft
 ofxGui
