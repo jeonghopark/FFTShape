@@ -36,39 +36,21 @@ public:
     BaseArch baseArch;
     
     
-    float * fftSmoothed;
-    
     int nBandsToGet;
     float prevx, prevy;
     
-    void normalFFT();
-    void lineCircleFFT(float _yPos = 200);
-    void lineCircleCaptureFFT(float _yPos = 450);
     vector<float> captureFFTSmoothed;
     vector<int> captureFFTIndex;
     
-//    ofxPanel gui;
-    
-//    ofxIntSlider captureTimer;
-//    ofxButton musicChange;
-    int captureTimer;
-
     float xPosition;
     
     
     Calligraphy calligraphy;
     
-    vector<Calligraphy> calligraphies;
-    int calliYShift;
-    bool bClliXPosChange;
-    int calliIndex;
-    vector<ofVec3f> calliPos;
 
     ProcessFFT fft;
     
-    
     float mainOffSetXPos, mainOffSetYPos;
-
     
 };
 
