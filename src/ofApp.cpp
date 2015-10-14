@@ -16,14 +16,15 @@ void ofApp::setup(){
     
 	nBandsToGet = 32 * 2;
     
-    fft.fft.stream.setDeviceID(2);
+    fft.fft.stream.setDeviceID(3);
     fft.setup();
-    fft.fft.setup(16384 * 0.5);
+    fft.fft.setup(16384);
     fft.setNumFFTBins(nBandsToGet);
     fft.setFFTpercentage(0.9);
     
-    calligraphy.setup(& baseArch);
-
+    calligraphy.inputBaseArch( baseArch );
+    calligraphy.inputFFTP( fft );
+    
 }
 
 
@@ -34,7 +35,6 @@ void ofApp::update(){
 	
     fft.update();
     calligraphy.update();
-    calligraphy.inputFFT(fft.getSpectrum());
     
 }
 
@@ -45,20 +45,14 @@ void ofApp::draw(){
     
     ofTranslate( mainOffSetXPos, mainOffSetYPos );
     
-    baseArch.guideFrames();
-    baseArch.drawEdgeCover();
-    baseArch.guideLines();
-    baseArch.guidePoints();
+//    baseArch.guideLines();
+//    baseArch.guidePoints();
     
-    ofPopMatrix();
-    
-    
-    ofPushMatrix();
-
-    ofTranslate( mainOffSetXPos, mainOffSetYPos );
+    baseArch.guideFrames( ofColor(255, 0, 0) );
     
     calligraphy.draw();
-    
+
+    baseArch.drawEdgeCover( ofColor(0) );
     
     ofPopMatrix();
     

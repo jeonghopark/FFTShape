@@ -22,6 +22,12 @@
 		90A67B674EF9B104D82A5143 /* ofxBaseGui.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 978FC5AD324430DE5A0A5D92 /* ofxBaseGui.cpp */; };
 		A81811CD1BCC203300D09C5E /* BaseArch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A81811C91BCC203300D09C5E /* BaseArch.cpp */; settings = {ASSET_TAGS = (); }; };
 		A81811CE1BCC203400D09C5E /* GuiApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A81811CB1BCC203300D09C5E /* GuiApp.cpp */; settings = {ASSET_TAGS = (); }; };
+		A84B0A391BCEBE960006DF0D /* ofTextConverter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A84B0A261BCEBE960006DF0D /* ofTextConverter.cpp */; settings = {ASSET_TAGS = (); }; };
+		A84B0A3A1BCEBE960006DF0D /* ofUnicode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A84B0A281BCEBE960006DF0D /* ofUnicode.cpp */; settings = {ASSET_TAGS = (); }; };
+		A84B0A3B1BCEBE960006DF0D /* ofUTF8.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A84B0A2A1BCEBE960006DF0D /* ofUTF8.cpp */; settings = {ASSET_TAGS = (); }; };
+		A84B0A3C1BCEBE960006DF0D /* fontstash.c in Sources */ = {isa = PBXBuildFile; fileRef = A84B0A2E1BCEBE960006DF0D /* fontstash.c */; settings = {ASSET_TAGS = (); }; };
+		A84B0A3D1BCEBE960006DF0D /* stb_truetype.c in Sources */ = {isa = PBXBuildFile; fileRef = A84B0A301BCEBE960006DF0D /* stb_truetype.c */; settings = {ASSET_TAGS = (); }; };
+		A84B0A3E1BCEBE960006DF0D /* ofxFontStash.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A84B0A351BCEBE960006DF0D /* ofxFontStash.cpp */; settings = {ASSET_TAGS = (); }; };
 		B27047E79090878383CB00A8 /* ofxFft.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8B0D309B7195C036C9274D16 /* ofxFft.cpp */; };
 		BDED0ECDB2BE0FD939C38AEB /* ofxButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7C3ED944D179B4C151BDD311 /* ofxButton.cpp */; };
 		E4328149138ABC9F0047C5CB /* openFrameworksDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4328148138ABC890047C5CB /* openFrameworksDebug.a */; };
@@ -90,6 +96,28 @@
 		A81811CA1BCC203300D09C5E /* BaseArch.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = BaseArch.h; path = ../../bpii_Calibration/src/BaseArch.h; sourceTree = "<group>"; };
 		A81811CB1BCC203300D09C5E /* GuiApp.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = GuiApp.cpp; path = ../../bpii_Calibration/src/GuiApp.cpp; sourceTree = "<group>"; };
 		A81811CC1BCC203300D09C5E /* GuiApp.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = GuiApp.h; path = ../../bpii_Calibration/src/GuiApp.h; sourceTree = "<group>"; };
+		A84B0A131BCEBE960006DF0D /* checked.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = checked.h; sourceTree = "<group>"; };
+		A84B0A141BCEBE960006DF0D /* core.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = core.h; sourceTree = "<group>"; };
+		A84B0A151BCEBE960006DF0D /* unchecked.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = unchecked.h; sourceTree = "<group>"; };
+		A84B0A171BCEBE960006DF0D /* utf8.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = utf8.h; sourceTree = "<group>"; };
+		A84B0A191BCEBE960006DF0D /* ReleaseNotes */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReleaseNotes; sourceTree = "<group>"; };
+		A84B0A1A1BCEBE960006DF0D /* utf8cpp.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = utf8cpp.html; sourceTree = "<group>"; };
+		A84B0A1C1BCEBE960006DF0D /* checked.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = checked.h; sourceTree = "<group>"; };
+		A84B0A1D1BCEBE960006DF0D /* core.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = core.h; sourceTree = "<group>"; };
+		A84B0A1E1BCEBE960006DF0D /* unchecked.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = unchecked.h; sourceTree = "<group>"; };
+		A84B0A201BCEBE960006DF0D /* utf8.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = utf8.h; sourceTree = "<group>"; };
+		A84B0A261BCEBE960006DF0D /* ofTextConverter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofTextConverter.cpp; sourceTree = "<group>"; };
+		A84B0A271BCEBE960006DF0D /* ofTextConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofTextConverter.h; sourceTree = "<group>"; };
+		A84B0A281BCEBE960006DF0D /* ofUnicode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofUnicode.cpp; sourceTree = "<group>"; };
+		A84B0A291BCEBE960006DF0D /* ofUnicode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofUnicode.h; sourceTree = "<group>"; };
+		A84B0A2A1BCEBE960006DF0D /* ofUTF8.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofUTF8.cpp; sourceTree = "<group>"; };
+		A84B0A2B1BCEBE960006DF0D /* ofUTF8.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofUTF8.h; sourceTree = "<group>"; };
+		A84B0A2E1BCEBE960006DF0D /* fontstash.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fontstash.c; sourceTree = "<group>"; };
+		A84B0A2F1BCEBE960006DF0D /* fontstash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fontstash.h; sourceTree = "<group>"; };
+		A84B0A301BCEBE960006DF0D /* stb_truetype.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = stb_truetype.c; sourceTree = "<group>"; };
+		A84B0A311BCEBE960006DF0D /* stb_truetype.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stb_truetype.h; sourceTree = "<group>"; };
+		A84B0A351BCEBE960006DF0D /* ofxFontStash.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxFontStash.cpp; sourceTree = "<group>"; };
+		A84B0A361BCEBE960006DF0D /* ofxFontStash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxFontStash.h; sourceTree = "<group>"; };
 		B5BCBED2BF3BD6DDD2A0C398 /* ofxEasyFft.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxEasyFft.cpp; path = ../../../../openFrameworks/addons/ofxFft/src/ofxEasyFft.cpp; sourceTree = SOURCE_ROOT; };
 		B7B68934B136125FA5AC83EA /* ofxFftw.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxFftw.cpp; path = ../../../../openFrameworks/addons/ofxFft/src/ofxFftw.cpp; sourceTree = SOURCE_ROOT; };
 		C0B01119435D4672DF3FF84B /* ofxGui.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxGui.h; path = ../../../../openFrameworks/addons/ofxGui/src/ofxGui.h; sourceTree = SOURCE_ROOT; };
@@ -226,9 +254,161 @@
 			name = src;
 			sourceTree = "<group>";
 		};
+		A84B0A161BCEBE960006DF0D /* utf8 */ = {
+			isa = PBXGroup;
+			children = (
+				A84B0A131BCEBE960006DF0D /* checked.h */,
+				A84B0A141BCEBE960006DF0D /* core.h */,
+				A84B0A151BCEBE960006DF0D /* unchecked.h */,
+			);
+			path = utf8;
+			sourceTree = "<group>";
+		};
+		A84B0A181BCEBE960006DF0D /* include */ = {
+			isa = PBXGroup;
+			children = (
+				A84B0A161BCEBE960006DF0D /* utf8 */,
+				A84B0A171BCEBE960006DF0D /* utf8.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		A84B0A1B1BCEBE960006DF0D /* doc */ = {
+			isa = PBXGroup;
+			children = (
+				A84B0A191BCEBE960006DF0D /* ReleaseNotes */,
+				A84B0A1A1BCEBE960006DF0D /* utf8cpp.html */,
+			);
+			path = doc;
+			sourceTree = "<group>";
+		};
+		A84B0A1F1BCEBE960006DF0D /* utf8 */ = {
+			isa = PBXGroup;
+			children = (
+				A84B0A1C1BCEBE960006DF0D /* checked.h */,
+				A84B0A1D1BCEBE960006DF0D /* core.h */,
+				A84B0A1E1BCEBE960006DF0D /* unchecked.h */,
+			);
+			path = utf8;
+			sourceTree = "<group>";
+		};
+		A84B0A211BCEBE960006DF0D /* source */ = {
+			isa = PBXGroup;
+			children = (
+				A84B0A1F1BCEBE960006DF0D /* utf8 */,
+				A84B0A201BCEBE960006DF0D /* utf8.h */,
+			);
+			path = source;
+			sourceTree = "<group>";
+		};
+		A84B0A221BCEBE960006DF0D /* utf8_v2_3_1 */ = {
+			isa = PBXGroup;
+			children = (
+				A84B0A1B1BCEBE960006DF0D /* doc */,
+				A84B0A211BCEBE960006DF0D /* source */,
+			);
+			path = utf8_v2_3_1;
+			sourceTree = "<group>";
+		};
+		A84B0A231BCEBE960006DF0D /* src */ = {
+			isa = PBXGroup;
+			children = (
+				A84B0A221BCEBE960006DF0D /* utf8_v2_3_1 */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		A84B0A241BCEBE960006DF0D /* utf8cpp */ = {
+			isa = PBXGroup;
+			children = (
+				A84B0A181BCEBE960006DF0D /* include */,
+				A84B0A231BCEBE960006DF0D /* src */,
+			);
+			path = utf8cpp;
+			sourceTree = "<group>";
+		};
+		A84B0A251BCEBE960006DF0D /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				A84B0A241BCEBE960006DF0D /* utf8cpp */,
+			);
+			path = libs;
+			sourceTree = "<group>";
+		};
+		A84B0A2C1BCEBE960006DF0D /* src */ = {
+			isa = PBXGroup;
+			children = (
+				A84B0A261BCEBE960006DF0D /* ofTextConverter.cpp */,
+				A84B0A271BCEBE960006DF0D /* ofTextConverter.h */,
+				A84B0A281BCEBE960006DF0D /* ofUnicode.cpp */,
+				A84B0A291BCEBE960006DF0D /* ofUnicode.h */,
+				A84B0A2A1BCEBE960006DF0D /* ofUTF8.cpp */,
+				A84B0A2B1BCEBE960006DF0D /* ofUTF8.h */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		A84B0A2D1BCEBE960006DF0D /* ofxUnicode */ = {
+			isa = PBXGroup;
+			children = (
+				A84B0A251BCEBE960006DF0D /* libs */,
+				A84B0A2C1BCEBE960006DF0D /* src */,
+			);
+			name = ofxUnicode;
+			path = /Users/jeonghopark/Projects/BPII/BPIIMac/LiveCamGlitch/../../../../openFrameworks/addons/ofxUnicode;
+			sourceTree = "<absolute>";
+		};
+		A84B0A321BCEBE960006DF0D /* src */ = {
+			isa = PBXGroup;
+			children = (
+				A84B0A2E1BCEBE960006DF0D /* fontstash.c */,
+				A84B0A2F1BCEBE960006DF0D /* fontstash.h */,
+				A84B0A301BCEBE960006DF0D /* stb_truetype.c */,
+				A84B0A311BCEBE960006DF0D /* stb_truetype.h */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		A84B0A331BCEBE960006DF0D /* fontstash */ = {
+			isa = PBXGroup;
+			children = (
+				A84B0A321BCEBE960006DF0D /* src */,
+			);
+			path = fontstash;
+			sourceTree = "<group>";
+		};
+		A84B0A341BCEBE960006DF0D /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				A84B0A331BCEBE960006DF0D /* fontstash */,
+			);
+			path = libs;
+			sourceTree = "<group>";
+		};
+		A84B0A371BCEBE960006DF0D /* src */ = {
+			isa = PBXGroup;
+			children = (
+				A84B0A351BCEBE960006DF0D /* ofxFontStash.cpp */,
+				A84B0A361BCEBE960006DF0D /* ofxFontStash.h */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		A84B0A381BCEBE960006DF0D /* ofxFontStash */ = {
+			isa = PBXGroup;
+			children = (
+				A84B0A341BCEBE960006DF0D /* libs */,
+				A84B0A371BCEBE960006DF0D /* src */,
+			);
+			name = ofxFontStash;
+			path = /Users/jeonghopark/Projects/BPII/BPIIMac/LiveCamGlitch/../../../../openFrameworks/addons/ofxFontStash;
+			sourceTree = "<absolute>";
+		};
 		BB4B014C10F69532006C3DED /* addons */ = {
 			isa = PBXGroup;
 			children = (
+				A84B0A2D1BCEBE960006DF0D /* ofxUnicode */,
+				A84B0A381BCEBE960006DF0D /* ofxFontStash */,
 				5CFAC65997CFC4C36CD009B7 /* ofxCsv */,
 				BBC2B4228932C2AACC6701CF /* ofxFft */,
 				480A780D8D0308AE4A368801 /* ofxGui */,
@@ -387,11 +567,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */,
+				A84B0A3A1BCEBE960006DF0D /* ofUnicode.cpp in Sources */,
 				E4B69E210A3A1BDC003C02F2 /* ofApp.cpp in Sources */,
+				A84B0A3C1BCEBE960006DF0D /* fontstash.c in Sources */,
 				6D46844280E4B74216C8464F /* Calligraphy.cpp in Sources */,
 				75848DD2538F3F5D9ABC6517 /* ofxCsv.cpp in Sources */,
 				504EB236D12B34D134F3A424 /* ofxEasyFft.cpp in Sources */,
 				B27047E79090878383CB00A8 /* ofxFft.cpp in Sources */,
+				A84B0A3B1BCEBE960006DF0D /* ofUTF8.cpp in Sources */,
 				A81811CD1BCC203300D09C5E /* BaseArch.cpp in Sources */,
 				5583EC47D4CBDDA0B3E4D428 /* ofxFftBasic.cpp in Sources */,
 				07E4C6A87C7CDD85C9E53671 /* ofxFftw.cpp in Sources */,
@@ -400,13 +583,16 @@
 				A81811CE1BCC203400D09C5E /* GuiApp.cpp in Sources */,
 				4376D8F5342C0D1674CAF6CA /* kiss_fftr.c in Sources */,
 				90A67B674EF9B104D82A5143 /* ofxBaseGui.cpp in Sources */,
+				A84B0A391BCEBE960006DF0D /* ofTextConverter.cpp in Sources */,
 				BDED0ECDB2BE0FD939C38AEB /* ofxButton.cpp in Sources */,
 				EB0E84BEAD177E6CB08DB4EF /* ofxGuiGroup.cpp in Sources */,
 				13DBDF3E91D15454CDCE3F81 /* ofxLabel.cpp in Sources */,
 				5DE87C0399C3D16E809524E4 /* ofxPanel.cpp in Sources */,
+				A84B0A3E1BCEBE960006DF0D /* ofxFontStash.cpp in Sources */,
 				72F586B1E35F0C5BCDB2003D /* ofxSlider.cpp in Sources */,
 				883A19B4FB8259967B85B9FF /* ofxSliderGroup.cpp in Sources */,
 				5DB0FD9C47C8AED393543077 /* ofxToggle.cpp in Sources */,
+				A84B0A3D1BCEBE960006DF0D /* stb_truetype.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -14,6 +14,7 @@
 #include "ofMain.h"
 
 #include "BaseArch.h"
+#include "ofxProcessFFT.h"
 
 class Calligraphy{
     
@@ -29,17 +30,18 @@ public :
     Calligraphy();
     ~Calligraphy();
     
-    void setup(BaseArch *);
+    void setup();
     void update();
-    void inputFFT(vector<float> _fft);
+    void inputBaseArch(BaseArch & _baseArch);
+    void inputFFTP(ProcessFFT & _processFFT);
     void inputFftSmoothed(vector<float> );
     void draw();
-    void drawElement(float _xPos, float _yPos);
+    void drawElement(float _xPos, float _yPos, int _h);
     
     BaseArch * baseArch;
+    ProcessFFT * processFFT;
     
     int calliSize;
-    
     
     int calliYShift;
     bool bClliXPosChange;

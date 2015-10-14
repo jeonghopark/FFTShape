@@ -43,8 +43,7 @@ public:
     vector<int> captureFFTIndex;
     
     float xPosition;
-    
-    
+        
     Calligraphy calligraphy;
     
 

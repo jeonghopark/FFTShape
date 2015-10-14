@@ -15,7 +15,7 @@ Calligraphy::Calligraphy(){
     calliSize = 20;
     calliYShift = -1;
     calliIndex = -1;
-    
+ 
 }
 
 
@@ -27,33 +27,40 @@ Calligraphy::~Calligraphy(){
 
 
 //--------------------------------------------------------------
-void Calligraphy::setup(BaseArch * _baseArch){
+void Calligraphy::setup(){
     
-    baseArch = new BaseArch;
-    baseArch = _baseArch;
+}
+
+
+//--------------------------------------------------------------
+void Calligraphy::inputFFTP(ProcessFFT & _processFFT){
     
+    processFFT = & _processFFT;
+    
+}
+
+
+
+//--------------------------------------------------------------
+void Calligraphy::inputBaseArch(BaseArch & _baseArch){
+    
+    baseArch = & _baseArch;
+
 }
 
 
 //--------------------------------------------------------------
 void Calligraphy::update(){
 
-
-}
-
-    
-//--------------------------------------------------------------
-void Calligraphy::inputFFT(vector<float> _fft){
-
     if(ofGetFrameNum()%10==0) {
-        inputFftSmoothed(_fft);
+        inputFftSmoothed( processFFT->getSpectrum() );
     }
     
     
     if(ofGetFrameNum()%10==0) {
-
+        
         Calligraphy _eCalligraphy;
-        _eCalligraphy.inputFftSmoothed(_fft);
+        _eCalligraphy.inputFftSmoothed( processFFT->getSpectrum() );
         
         
         calligraphies.push_back(_eCalligraphy);
@@ -89,38 +96,43 @@ void Calligraphy::inputFFT(vector<float> _fft){
 }
 
 
+
+
 //--------------------------------------------------------------
 void Calligraphy::inputFftSmoothed(vector<float> _fft){
         
     captureFFTSmoothed.clear();
     captureFFTIndex.clear();
+
     captureFFTSmoothed.resize(calliSize);
     captureFFTIndex.resize(calliSize);
-
+    
     for(int i=0; i<calliSize; i++) {
 
         int _index = round( ofRandom(60) );
         captureFFTIndex[i] = _index;
         captureFFTSmoothed[i] = _fft[_index];
-        
     }
     
 }
 
 
 //--------------------------------------------------------------
-void Calligraphy::drawElement(float _xPos, float _yPos){
+void Calligraphy::drawElement(float _xPos, float _yPos, int _h){
     
     ofPushStyle();
     
     ofNoFill();
     
-    ofSetColor(255);
-    
     ofBeginShape();
     
     for (int i=0; i<calliSize; i++){
-        float _fftFactor1 = ofMap(captureFFTSmoothed[i], 0, 1, 20, 25);
+
+        ofSetColor( 255 );
+        ofSetColor( ofColor::fromHsb( _h, 255, 255) );
+
+        
+        float _fftFactor1 = ofMap(captureFFTSmoothed[i], 0, 1, 0, 25);
         float _x1 = captureFFTIndex[i];
         
         float _xCircle = cos( captureFFTIndex[i] * 36 / 127.0 ) * _fftFactor1;
@@ -142,10 +154,12 @@ void Calligraphy::drawElement(float _xPos, float _yPos){
 //--------------------------------------------------------------
 void Calligraphy::draw(){
     
-    drawElement( baseArch->framesCenter[11][5].x, baseArch->framesCenter[11][5].y );
+    drawElement( baseArch->framesCenter[11][5].x, baseArch->framesCenter[11][5].y, 255 );
 
     for (int i=0; i<calligraphies.size(); i++) {
-        calligraphies[i].drawElement( calliPos[i].x, calliPos[i].y );
+        int _h = ofMap(i, 0, 110, 0, 255);
+
+        calligraphies[i].drawElement( calliPos[i].x, calliPos[i].y, _h );
     }
     
 }
