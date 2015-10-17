@@ -37,15 +37,11 @@ public:
     
     
     int nBandsToGet;
-    float prevx, prevy;
     
     vector<float> captureFFTSmoothed;
     vector<int> captureFFTIndex;
-    
-    float xPosition;
-        
+
     Calligraphy calligraphy;
-    
 
     ProcessFFT fft;
     

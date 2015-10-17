@@ -25,6 +25,8 @@ void ofApp::setup(){
     calligraphy.inputBaseArch( baseArch );
     calligraphy.inputFFTP( fft );
     
+    
+    
 }
 
 
