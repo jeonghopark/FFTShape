@@ -16,7 +16,7 @@ void ofApp::setup(){
     
 	nBandsToGet = 32 * 2;
     
-    fft.fft.stream.setDeviceID(3);
+    fft.fft.stream.setDeviceID(0);
     fft.setup();
     fft.fft.setup(16384);
     fft.setNumFFTBins(nBandsToGet);
